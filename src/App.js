@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import HomePage from './HomePage/HomePage'
 import CharPage from './CharPage/CharPage'
+import Header from './HomePage/Header/Header'
 import './App.css'
 
 export class App extends Component {
@@ -14,7 +15,15 @@ export class App extends Component {
     }
   }
 
+  goToHomepage = () => {
+    this.setState({ isOnHomePage: true })
+    this.setState({ isOnCharPage: false })
+  }
+
   fetchData = () => {
+    this.setState({ isOnHomePage: true })
+    this.setState({ isOnCharPage: false })
+
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
       .then((res) => this.setState({ data: res.results }));
@@ -32,7 +41,8 @@ export class App extends Component {
   render() {
     return (
       <div>
-        { this.state.isOnHomePage && <HomePage fetchData={this.fetchData} fetchCharacter={this.fetchCharacter} data={this.state.data} /> }
+        <Header goToHomepage={this.goToHomepage} fetchData={this.fetchData} />
+        { this.state.isOnHomePage && <HomePage fetchCharacter={this.fetchCharacter} data={this.state.data} /> }
         { this.state.isOnCharPage && <CharPage character={this.state.character} /> }
       </div>
     )
