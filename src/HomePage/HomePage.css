@@ -1,0 +1,42 @@
+.homepage-box{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 4rem;
+}
+
+.card{
+    border: .2rem solid greenyellow;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card > img{
+    width: 100%;
+}
+
+.content{
+    padding: 1rem;
+}
+
+.content > h2{
+    font-size: 1.3rem;
+    color: grey;
+}
+
+.content > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid green;
+    background-color: transparent;
+    color: green;
+    padding: .3rem;
+    margin-top: .5rem;
+}
+
+.content > button > svg{
+    width: 1.2rem;
+}

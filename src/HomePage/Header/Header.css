@@ -1,0 +1,14 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background-color: grey;
+    color: white;
+}
+
+header > button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}

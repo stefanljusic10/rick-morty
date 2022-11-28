@@ -1,0 +1,7 @@
+.character{
+    padding: 4rem;
+}
+
+.character > h1{
+    font-size: 3rem;
+}
